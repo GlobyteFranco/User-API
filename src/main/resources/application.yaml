@@ -1,3 +1,14 @@
 spring:
-  application:
-    name: User-API
+  datasource:
+    url: jdbc:mysql://localhost:3306/auth_db
+    username: auth_user
+    password: auth_pass
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    open-in-view: false
+
+server:
+  port: 8080
