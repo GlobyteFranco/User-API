@@ -28,8 +28,6 @@ public class Usuario {
         this.password = password;
     }
 
-    // Getters y Setters
-
     public Long getId() {
         return id;
     }
@@ -50,7 +48,6 @@ public class Usuario {
         return password;
     }
 
-    // IMPORTANTE: acá ya debe venir hasheada
     public void setPassword(String password) {
         this.password = password;
     }

@@ -23,12 +23,10 @@ public class ServicioUsuario {
     }
 
     public String registerUser(RegistroDTO request) {
-        // Verificar si el email ya existe
         if (userRepository.existsByEmail(request.getEmail())) {
             throw new ResponseStatusException(CONFLICT, "Email already exists");
         }
 
-        // Hashear la contraseña antes de guardar
         String hashedPassword = passwordEncoder.encode(request.getPassword());
 
         Usuario user = new Usuario();
@@ -41,11 +39,9 @@ public class ServicioUsuario {
     }
 
     public String loginUser(LoginDTO request) {
-        // Buscar usuario por email
         Usuario user = userRepository.findByEmail(request.getEmail())
                 .orElseThrow(() -> new ResponseStatusException(NOT_FOUND, "User does not exist"));
 
-        // Comparar password ingresada con la hash guardada
         boolean passwordMatches = passwordEncoder.matches(request.getPassword(), user.getPassword());
 
         if (!passwordMatches) {

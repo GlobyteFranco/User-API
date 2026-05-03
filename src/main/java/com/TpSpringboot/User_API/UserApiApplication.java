@@ -8,7 +8,7 @@ public class UserApiApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(UserApiApplication.class, args);
-		System.out.println("¡La aplicación se ha iniciado correctamente!");
+		System.out.println("La aplicacion funciona!!");
 	}
 
 }
